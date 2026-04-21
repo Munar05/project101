@@ -1,26 +1,86 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
 
-<header>Магазин</header>
-<meta charset="UTF-8">
+<body>
+
+<header>
+    <h2>🛒 Мини-магазин</h2>
+    <nav>
+        <a href="login.html">Вход</a>
+        <a href="register.html">Регистрация</a>
+        <a href="cart.html">Корзина</a>
+    </nav>
+</header>
+
 <div class="container">
-<nav>
-  <a href="index.html">Главная</a>
-  
-  <a href="cart.html">Корзина</a>
-</nav>
-<a href="login.html">Вход</a> |
-<a href="register.html">Регистрация</a>
 
-<div class="card">
-    <p>Товар 1 - 1000</p>
-    <button onclick="add('Товар 1',1000)">В корзину</button>
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://picsum.photos/300?1">
+            <h3>Товар 1</h3>
+            <p>1000 ₸</p>
+            <button onclick="add('Товар 1',1000)">В корзину</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/300?2">
+            <h3>Товар 2</h3>
+            <p>1200 ₸</p>
+            <button onclick="add('Товар 2',1200)">В корзину</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/300?3">
+            <h3>Товар 3</h3>
+            <p>1500 ₸</p>
+            <button onclick="add('Товар 3',1500)">В корзину</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/300?4">
+            <h3>Товар 4</h3>
+            <p>900 ₸</p>
+            <button onclick="add('Товар 4',900)">В корзину</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/300?5">
+            <h3>Товар 5</h3>
+            <p>2000 ₸</p>
+            <button onclick="add('Товар 5',2000)">В корзину</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/300?6">
+            <h3>Товар 6</h3>
+            <p>1800 ₸</p>
+            <button onclick="add('Товар 6',1800)">В корзину</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/300?7">
+            <h3>Товар 7</h3>
+            <p>1100 ₸</p>
+            <button onclick="add('Товар 7',1100)">В корзину</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/300?8">
+            <h3>Товар 8</h3>
+            <p>3000 ₸</p>
+            <button onclick="add('Товар 8',3000)">В корзину</button>
+        </div>
+
+    </div>
+
 </div>
 
-<div class="card">
-    <p>Товар 2 - 2000</p>
-    <button onclick="add('Товар 2',2000)">В корзину</button>
-</div>
-
-<a href="cart.html">Корзина</a>
-
-</div>
+</body>
+</html>

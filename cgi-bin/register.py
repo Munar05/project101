@@ -11,7 +11,6 @@ password = form.getvalue("pass")
 conn = sqlite3.connect("users.db")
 cur = conn.cursor()
 
-# проверка — есть ли уже пользователь
 cur.execute("SELECT * FROM users WHERE login=?", (login,))
 user = cur.fetchone()
 
@@ -20,6 +19,13 @@ if user:
 else:
     cur.execute("INSERT INTO users (login, password) VALUES (?, ?)", (login, password))
     conn.commit()
-    print("<h2>Регистрация успешна</h2>")
+
+    # 👉 редирект в login.html
+    print("""
+    <script>
+        alert('Регистрация успешна!');
+        window.location.href = '/login.html';
+    </script>
+    """)
 
 conn.close()

@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Корзина</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+
 <body onload="showCart()">
 
-<h1>Корзина</h1>
+<header>
+    <h2>🛒 Корзина</h2>
+    <a href="index.html">Назад в магазин</a>
+</header>
 
-<ul id="c"></ul>
-<p id="sum"></p>
+<div class="container">
 
-<form action="/cgi-bin/order.py" method="post">
-    <input type="text" name="name" placeholder="Имя">
-    <input type="submit" value="Оформить заказ">
-</form>
+    <div id="list"></div>
 
-<a href="index.html">Назад</a>
+    <h3 id="total"></h3>
 
+</div>
+<button class="pay-btn" onclick="goPay()">Оплатить</button>
+<script>
+function goPay(){
+    window.location.href = "pay.html";
+}
+</script>
 </body>
 </html>

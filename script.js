@@ -1,27 +1,40 @@
-var cart = [];
+var cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function add(name, price) {
-    cart.push({n: name, p: price});
+    cart.push({name: name, price: price});
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Добавлено");
+    alert("Добавлено в корзину");
 }
 
 function showCart() {
-    var data = localStorage.getItem("cart");
+    var list = document.getElementById("list");
+    var total = document.getElementById("total");
 
-    if (data) {
-        cart = JSON.parse(data);
-    }
+    if (!list) return; // защита если не та страница
 
-    var ul = document.getElementById("c");
-    var s = 0;
+    list.innerHTML = "";
+
+    var sum = 0;
 
     for (var i = 0; i < cart.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = cart[i].n + " - " + cart[i].p;
-        ul.appendChild(li);
-        s += cart[i].p;
+        var item = cart[i];
+        sum += item.price;
+
+        var div = document.createElement("div");
+        div.className = "cart-item";
+
+        div.innerHTML =
+            "<span>" + item.name + " - " + item.price + " ₸</span>" +
+            "<button onclick='removeItem(" + i + ")'>Удалить</button>";
+
+        list.appendChild(div);
     }
 
-    document.getElementById("sum").innerHTML = "Сумма: " + s;
+    total.innerHTML = "Итого: " + sum + " ₸";
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showCart();
 }

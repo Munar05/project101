@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* карточка формы */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* заголовок */
+header {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* поля ввода */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 5px rgba(37,117,252,0.4);
+}
+
+/* кнопка */
+input[type="submit"] {
+    background: #2575fc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #1a5edb;
+    transform: scale(1.03);
+}
+
+/* ссылки */
+a {
+    display: block;
+    margin-top: 10px;
+    color: #2575fc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

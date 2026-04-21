@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Оплата</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+
+<body>
+
+<div class="pay-container">
+
+<h2>💳 Оплата заказа</h2>
+
+<input type="text" placeholder="Номер карты"><br>
+<input type="text" placeholder="Имя владельца"><br>
+<input type="text" placeholder="MM/YY"><br>
+<input type="text" placeholder="CVV"><br>
+
+<button onclick="pay()">Оплатить</button>
+
+</div>
+
+<script>
+function pay(){
+    alert("Оплата прошла успешно!");
+    localStorage.removeItem("cart");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
