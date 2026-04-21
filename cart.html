@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <script src="script.js"></script>
+</head>
+<body onload="showCart()">
+
+<h1>Корзина</h1>
+
+<ul id="c"></ul>
+<p id="sum"></p>
+
+<form action="/cgi-bin/order.py" method="post">
+    <input type="text" name="name" placeholder="Имя">
+    <input type="submit" value="Оформить заказ">
+</form>
+
+<a href="index.html">Назад</a>
+
+</body>
+</html>
