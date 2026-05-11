@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>История заказов</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadOrders()">
+
+<h2>📦 История заказов</h2>
+<button onclick="window.location.href='cart.html'">
+    ← Назад в корзину
+</button>
+<button onclick="clearOrders()">Очистить историю</button>
+<div id="list"></div>
+
+<script>
+function loadOrders(){
+    fetch("/cgi-bin/get_orders.py")
+    .then(r => r.text())
+    .then(data => {
+        document.getElementById("list").innerHTML = data;
+    });
+}
+</script>
+
+<script>
+function clearOrders(){
+
+    if(confirm("Удалить все заказы?")){
+
+        fetch("/cgi-bin/clear_orders.py")
+        .then(() => {
+            alert("История очищена");
+            location.reload();
+        });
+
+    }
+
+}
+</script>
+
+
+</body>
+</html>

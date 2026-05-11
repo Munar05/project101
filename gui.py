@@ -1,19 +1,23 @@
 import tkinter as tk
 
 def calc():
-    total = int(e.get())
-    r.config(text="Итого: " + str(total))
+    try:
+        price = eval(e.get())
+        result.config(text="Итого: " + str(price) + " ₸")
+    except:
+        result.config(text="Ошибка ввода")
 
 w = tk.Tk()
-w.title("Подсчет заказа")
+w.title("GUI модуль магазина")
+
+tk.Label(w, text="Цена товара").pack()
 
 e = tk.Entry(w)
 e.pack()
 
-b = tk.Button(w, text="Посчитать", command=calc)
-b.pack()
+tk.Button(w, text="Посчитать", command=calc).pack()
 
-r = tk.Label(w, text="")
-r.pack()
+result = tk.Label(w, text="")
+result.pack()
 
 w.mainloop()

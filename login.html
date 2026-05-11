@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
 <link rel="stylesheet" href="auth.css">
 </head>
+<form action="/cgi-bin/login.py" method="post" onsubmit="return validateForm()">
+
+<script>
+function validateForm(){
+    let login = document.querySelector("input[name='login']").value;
+    let pass = document.querySelector("input[name='pass']").value;
+
+    if(login.length < 3){
+        alert("Логин слишком короткий");
+        return false;
+    }
+
+    if(pass.length < 3){
+        alert("Пароль слишком короткий");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+
 <body>
 
 <div class="container">

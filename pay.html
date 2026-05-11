@@ -29,5 +29,36 @@ function pay(){
 }
 </script>
 
+<script>
+function pay(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if(cart.length === 0){
+        alert("Корзина пуста!");
+        return;
+    }
+
+    let total = 0;
+    let items = "";
+
+    for(let i=0;i<cart.length;i++){
+        items += cart[i].name + " ";
+        total += cart[i].price;
+    }
+
+    fetch("/cgi-bin/save_order.py", {
+        method: "POST",
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+        body: "items=" + items + "&total=" + total
+    })
+    .then(() => {
+        alert("Оплата успешна!");
+        localStorage.removeItem("cart");
+        window.location.href = "index.html";
+    });
+}
+</script>
+
+
 </body>
 </html>
