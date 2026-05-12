@@ -28,20 +28,23 @@ nav a:hover {
     padding: 20px;
 }
 
-/* GRID */
+/* GRID (ФИКС — НЕ РАСТЯГИВАЕТ КАРТОЧКИ) */
 .grid {
     display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, 220px);
+    justify-content: center;
     gap: 20px;
 }
 
 /* CARD */
 .card {
+    width: 220px;
     background: white;
     border-radius: 14px;
     padding: 10px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
 .card:hover {
@@ -72,13 +75,23 @@ button:hover {
 }
 
 /* SEARCH */
-#search {
-    width: 320px;
-    padding: 12px;
+.search-box {
+    width: 350px;
     margin: 20px auto;
-    display: block;
-    border-radius: 10px;
+}
+
+#search {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
     border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+#search:focus {
+    border: 1px solid #2575fc;
+    box-shadow: 0 0 8px rgba(37,117,252,0.4);
 }
 
 /* MENU BUTTON */
@@ -133,13 +146,13 @@ button:hover {
 
 /* RESPONSIVE */
 @media (max-width: 1000px) {
-    .grid { grid-template-columns: repeat(3, 1fr); }
+    .grid { grid-template-columns: repeat(3, 220px); justify-content: center; }
 }
 
 @media (max-width: 700px) {
-    .grid { grid-template-columns: repeat(2, 1fr); }
+    .grid { grid-template-columns: repeat(2, 220px); justify-content: center; }
 }
 
 @media (max-width: 450px) {
-    .grid { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: repeat(1, 220px); }
 }
